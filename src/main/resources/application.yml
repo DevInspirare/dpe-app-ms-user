@@ -4,7 +4,7 @@ server:
 ##CONFIGURE DATASOURCE MYSQL
 spring:
   datasource:
-    url: jdbc:mysql://localhost/syscoma?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    url: jdbc:mysql://192.168.239.1/syscoma?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
     username: root
     password: 123456
 
