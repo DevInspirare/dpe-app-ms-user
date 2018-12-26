@@ -8,7 +8,7 @@ LABEL maintainer="villarreal.benji@gmail.com"
 VOLUME /tmp
 
 # Make port 8080 available to the world outside this container
-EXPOSE 9007
+EXPOSE 9008
 
 # The application's jar file
 ARG JAR_FILE=target/dpe-app-ms-user-0.0.1-SNAPSHOT.jar
