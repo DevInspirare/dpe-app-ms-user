@@ -1,5 +1,6 @@
 package pe.com.devinspirare.dpeappmsusuario.controller;
 
+import io.swagger.annotations.Api;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import pe.com.devinspirare.dpeappjarmodels.dto.GenericResponse;
@@ -9,8 +10,17 @@ import pe.com.devinspirare.dpeappmsusuario.service.UserService;
 
 import java.util.List;
 
+/**
+ *
+ * @apiNote Service Api RestFul with microservice user.
+ * @author Zeler Benji Villarreal Marcelo
+ * @version 0.0.1
+ * @since 01/01/2018
+ *
+ */
 @RestController
 @RequestMapping(value = EndPoint.API_USER)
+@Api(value = " /user", description = "Api Restful Microservice User", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class UserController{
 
     private final UserService userService;
@@ -21,7 +31,7 @@ public class UserController{
 
 
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    UserDTO getUsuario(@PathVariable("id") String id){
+    UserDTO getUser(@PathVariable("id") String id){
         return this.userService.getUser(Long.valueOf(id));
     }
 
