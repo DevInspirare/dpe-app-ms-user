@@ -2,6 +2,13 @@
 server:
   servlet:
     context-path: /dpe-app-ms-user
+##CONFIGURE DATASOURCE MYSQL
+spring:
+  datasource:
+    url: jdbc:mysql://192.168.239.1:3306/syscoma?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: 123456
+
 # Naming strategy
   jpa:
     # Allows Hibernate to generate SQL optimized for a particular DBMS
@@ -17,3 +24,8 @@ server:
         physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
   application:
     name: dpe-app-ms-user
+eureka:
+  client:
+    enabled: true
+    service-url:
+      defaultZone: http://192.168.0.5:9007/dpe-app-ms-eurekaserver/eureka

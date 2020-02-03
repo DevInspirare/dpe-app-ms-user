@@ -8,10 +8,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 @EnableJpaRepositories(value = {"pe.com.devinspirare.dpeappmsusuario.dao", "pe.com.devinspirare.dpeappjarmodels"})
 @EntityScan(value = "pe.com.devinspirare.dpeappjarmodels")
-public class DpeAppMsUsuarioApplication {
+public class DpeAppMsUserApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DpeAppMsUsuarioApplication.class, args);
+        SpringApplication.run(DpeAppMsUserApplication.class, args);
     }
 
 }

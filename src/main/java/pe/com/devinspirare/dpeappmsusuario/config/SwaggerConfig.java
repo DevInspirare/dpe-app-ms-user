@@ -2,6 +2,7 @@ package pe.com.devinspirare.dpeappmsusuario.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import pe.com.devinspirare.dpeappmsusuario.vertical.Constantes;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -27,9 +28,9 @@ public class SwaggerConfig {
 
     private ApiInfo userApiInfo() {
         return new ApiInfoBuilder()
-                .title("Microservice User")
-                .version("1.0")
-                .license("DevInspirare License Version 1.0")
+                .title(Constantes.SWAGGER_CONFIG_TITLE)
+                .version(Constantes.SWAGGER_CONFIG_VERSION)
+                .license(Constantes.SWAGGER_CONFIG_LICENCE)
                 .build();
     }
 }

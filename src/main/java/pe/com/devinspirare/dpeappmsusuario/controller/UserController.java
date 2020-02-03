@@ -20,7 +20,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping(value = EndPoint.API_USER)
-@Api(value = " /user", description = "Api Restful Microservice User", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+@Api(value = EndPoint.API_USER, description = "Api Restful Microservice User", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class UserController{
 
     private final UserService userService;
@@ -28,7 +28,6 @@ public class UserController{
     public UserController(UserService userService){
         this.userService = userService;
     }
-
 
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     UserDTO getUser(@PathVariable("id") String id){
