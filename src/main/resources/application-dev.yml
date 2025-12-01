@@ -1,30 +1,24 @@
-server:
-  servlet:
-    context-path: /dpe-app-ms-user
-##CONFIGURE DATASOURCE MYSQL
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/syscoma?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-    username: root
-    password: 123456
+    # Aquí definimos el nombre de la BD como 'syscomadb'
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
 
-# Naming strategy
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        web-allow-others: true
+
   jpa:
-    # Allows Hibernate to generate SQL optimized for a particular DBMS
-    properties:
-          hibernate:
-            dialect: org.hibernate.dialect.MySQL5Dialect
-    # Show or not log for each sql query
+    # Muestra las consultas SQL en la consola de IntelliJ
     show-sql: true
     hibernate:
-      ddl-auto: create-drop
-      naming:
-        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyHbmImpl
-        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
-  application:
-    name: dpe-app-ms-user
-#eureka:
-#  client:
-#    enabled: true
-#    service-url:
-#      defaultZone: http://192.168.0.5:9007/dpe-app-ms-eurekaserver/eureka
+      ddl-auto: create
+    database-platform: org.hibernate.dialect.H2Dialect
+
+
+

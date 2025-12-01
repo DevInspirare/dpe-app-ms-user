@@ -1,19 +1,8 @@
-
 server:
-  servlet:
-    context-path: /dpe-app-ms-user
-# Naming strategy
-  jpa:
-    # Allows Hibernate to generate SQL optimized for a particular DBMS
-    properties:
-          hibernate:
-            dialect: org.hibernate.dialect.MySQL5Dialect
-    # Show or not log for each sql query
-    show-sql: true
-    hibernate:
-      ddl-auto: update
-      naming:
-        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyHbmImpl
-        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+  port: 8080
+
+spring:
   application:
     name: dpe-app-ms-user
+  profiles:
+    active: dev  # <--- ¡ESTA LÍNEA ES LA CLAVE! Activa el otro archivo.
